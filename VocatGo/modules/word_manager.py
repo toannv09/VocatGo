@@ -1,5 +1,6 @@
 """
 word_manager.py - Quản lý từ vựng: thêm, sửa, xóa, load/save CSV
+Fixed: Tự động tạo thư mục data/vocab nếu chưa tồn tại
 """
 import pandas as pd
 import os
@@ -9,6 +10,9 @@ CSV_FILE = "data/vocab/words.csv"
 
 def init_csv():
     """Khởi tạo file CSV nếu chưa tồn tại"""
+    # Tạo thư mục nếu chưa có
+    os.makedirs(os.path.dirname(CSV_FILE), exist_ok=True)
+    
     if not os.path.exists(CSV_FILE):
         df = pd.DataFrame(columns=['word', 'pos', 'phonetic', 'meaning', 'example', 'start_date', 'review_count', 'next_review'])
         df.to_csv(CSV_FILE, index=False, encoding='utf-8-sig')
@@ -22,7 +26,7 @@ def load_words():
         required_cols = ['word', 'pos', 'phonetic', 'meaning', 'example', 'start_date', 'review_count', 'next_review']
         for col in required_cols:
             if col not in df.columns:
-                if col in ['pos', 'phonetic']:  # Thêm 'pos' vào đây
+                if col in ['pos', 'phonetic']:
                     df[col] = ''
                 elif col in ['word', 'meaning', 'example', 'start_date', 'next_review']:
                     df[col] = ''
@@ -36,13 +40,15 @@ def load_words():
 def save_words(df):
     """Lưu danh sách từ vựng vào CSV"""
     try:
+        # Đảm bảo thư mục tồn tại trước khi lưu
+        os.makedirs(os.path.dirname(CSV_FILE), exist_ok=True)
         df.to_csv(CSV_FILE, index=False, encoding='utf-8-sig')
         return True
     except Exception as e:
         print(f"Error saving CSV: {e}")
         return False
 
-def add_word(word, pos, phonetic, meaning, example=""):  # Thêm tham số pos
+def add_word(word, pos, phonetic, meaning, example=""):
     """
     Thêm từ mới vào kho từ vựng
     Returns: (success: bool, message: str)
@@ -59,7 +65,7 @@ def add_word(word, pos, phonetic, meaning, example=""):  # Thêm tham số pos
     
     new_word = pd.DataFrame([{
         'word': word,
-        'pos': pos,          # Thêm dòng này
+        'pos': pos,
         'phonetic': phonetic,
         'meaning': meaning,
         'example': example,
@@ -76,7 +82,7 @@ def add_word(word, pos, phonetic, meaning, example=""):  # Thêm tham số pos
     else:
         return False, "❌ Lỗi khi lưu file!"
 
-def update_word(index, word, pos, phonetic, meaning, example):  # Thêm tham số pos
+def update_word(index, word, pos, phonetic, meaning, example):
     """
     Cập nhật thông tin từ vựng
     Returns: (success: bool, message: str)
@@ -93,7 +99,7 @@ def update_word(index, word, pos, phonetic, meaning, example):  # Thêm tham s�
     
     # Cập nhật
     df.at[index, 'word'] = word
-    df.at[index, 'pos'] = pos        # Thêm dòng này
+    df.at[index, 'pos'] = pos
     df.at[index, 'phonetic'] = phonetic
     df.at[index, 'meaning'] = meaning
     df.at[index, 'example'] = example
