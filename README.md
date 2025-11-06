@@ -166,10 +166,7 @@ Do VocatGo hiện đang deploy trên **Streamlit Cloud free**, có một số h�
 
 > 💡 Tóm lại: trên phiên bản free, hãy xem app như **công cụ học thử trực tuyến**.  
 > Để lưu tiến độ cá nhân, luôn export CSV và chuẩn bị dữ liệu riêng khi import.
-
----
-
-> 💡 Tóm lại: bạn có thể học trực tuyến ngay, nhưng **dữ liệu học tập quan trọng nên được export thường xuyên** để đảm bảo không mất tiến độ.
+> Bạn có thể học trực tuyến ngay, nhưng **dữ liệu học tập quan trọng nên được export thường xuyên** để đảm bảo không mất tiến độ.
 
 ---
 
