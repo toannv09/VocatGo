@@ -160,10 +160,6 @@ Do VocatGo hiện đang deploy trên **Streamlit Cloud free**, có một số h�
    - Tránh import CSV nhiều người cùng lúc để hạn chế bị trộn dữ liệu.  
    - Chuẩn bị sẵn CSV cá nhân để upload lại khi app vừa wake up.  
 
-4. **Hướng phát triển lâu dài**  
-   - Tích hợp lưu trữ cá nhân như **Google Sheets** hoặc cơ sở dữ liệu cloud để dữ liệu học tập được đồng bộ hóa riêng cho mỗi người.  
-   - Tăng trải nghiệm multi-user và đảm bảo dữ liệu an toàn, không bị trộn.
-
 > 💡 Tóm lại: trên phiên bản free, hãy xem app như **công cụ học thử trực tuyến**.  
 > Để lưu tiến độ cá nhân, luôn export CSV và chuẩn bị dữ liệu riêng khi import.
 > Bạn có thể học trực tuyến ngay, nhưng **dữ liệu học tập quan trọng nên được export thường xuyên** để đảm bảo không mất tiến độ.
