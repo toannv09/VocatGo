@@ -105,18 +105,6 @@ agreement,n,/əˈɡriː.mənt/,"sự thỏa thuận, hợp đồng","They reache
 
 ---
 
-## ⚙️ Hướng dẫn cài đặt
-```bash
-git clone https://github.com/toannv09/VocatGo.git
-cd VocatGo
-python -m venv venv
-source venv/bin/activate   # Linux/Mac
-venv\Scripts\activate      # Windows
-pip install -r requirements.txt
-streamlit run app.py
-```
----
-
 ## 🌐 Demo trực tuyến
 
 Bạn có thể thử nghiệm VocatGo trực tiếp tại:  
@@ -180,4 +168,27 @@ Các hướng phát triển trong tương lai:
    - Tìm các nền tảng khác ngoài Streamlit Cloud free để **hỗ trợ nhiều người dùng cùng lúc** và **lưu trữ dữ liệu vĩnh viễn**.  
    - Có thể kết hợp với dịch vụ hosting trả phí để tránh giới hạn tài nguyên, giảm thời gian khởi động khi app bị idle.
 
+---
+
+## 💻 Trải nghiệm tốt nhất và hướng dẫn cài đặt 
+
+Để trải nghiệm VocatGo một cách **mượt mà và ổn định**, khuyến nghị:
+
+- **Tải repo về máy cá nhân** và chạy local bằng Python + Streamlit.  
+- Khi chạy local:
+  - Dữ liệu CSV sẽ được lưu trực tiếp trên máy của bạn.  
+  - Không lo bị trộn dữ liệu với người khác.  
+  - Không bị giới hạn số người dùng cùng lúc như phiên bản free trên Streamlit Cloud.  
+- Hướng dẫn chạy local:
+
+```bash
+git clone https://github.com/toannv09/VocatGo.git
+cd VocatGo
+python -m venv venv
+# Linux/Mac
+source venv/bin/activate
+# Windows
+venv\Scripts\activate
+pip install -r requirements.txt
+streamlit run app.py
 
