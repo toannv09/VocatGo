@@ -1,4 +1,5 @@
 # VocatGo
+<img width="691" height="707" alt="VocatGo_Logo" src="https://github.com/user-attachments/assets/a2296a5b-8fb5-4890-828e-1dcde0d2a49b" />
 
 **VocatGo – Ứng dụng học từ vựng tiếng Anh thông minh với Flashcard & Quiz**  
 
