@@ -114,3 +114,77 @@ source venv/bin/activate   # Linux/Mac
 venv\Scripts\activate      # Windows
 pip install -r requirements.txt
 streamlit run app.py
+```
+---
+
+## 🌐 Demo trực tuyến
+
+Bạn có thể thử nghiệm VocatGo trực tiếp tại:  
+[https://vocatgo.streamlit.app/](https://vocatgo.streamlit.app/)
+
+---
+
+### ℹ️ Hướng dẫn sử dụng trên phiên bản web deploy miễn phí
+
+1. **Import từ vựng**  
+   - Vào **Quản lý từ (Manage Words)**.  
+   - Sử dụng chức năng **Import CSV** để nạp danh sách từ bạn muốn học.  
+   - CSV phải tuân theo cấu trúc chuẩn (`word`, `pos`, `phonetic`, `meaning`, `example`, `start_date`, `review_count`, `next_review`).  
+   - Sau khi import, từ vựng sẽ xuất hiện trong Flashcard/Quiz để bạn học.
+
+2. **Học & Ôn tập**  
+   - Sử dụng các chế độ **Flashcard** và **Quiz** như bình thường.  
+   - Ứng dụng sẽ cập nhật `next_review` và `review_count` theo tiến độ học.
+
+3. **Export dữ liệu đã cập nhật**  
+   - Sau khi học xong, vào lại **Quản lý từ (Manage Words)** và **Export CSV** để tải về.  
+   - Việc này giúp bạn lưu lại các cập nhật như `next_review`, bởi vì phiên bản deploy miễn phí có thể **không lưu file CSV vĩnh viễn**.
+
+---
+
+### ⚠️ Lưu ý khi sử dụng bản deploy miễn phí
+
+Do VocatGo hiện đang deploy trên **Streamlit Cloud free**, có một số hạn chế mà người dùng cần lưu ý:
+
+1. **Dữ liệu có thể bị chia sẻ giữa người dùng**  
+   - CSV mà bạn import (danh sách từ vựng) được lưu trên cùng một filesystem tạm thời của app.  
+   - Nếu nhiều người cùng import CSV hoặc sử dụng app cùng lúc, **dữ liệu có thể bị trộn**, dẫn đến từ vựng của người khác xuất hiện trong danh sách của bạn.  
+
+2. **Ứng dụng “ngủ đông” khi không có người dùng**  
+   - Nếu app không được truy cập trong một thời gian, Streamlit Cloud free sẽ tạm dừng app.  
+   - Khi mở lại, app cần **khởi động lại (“wake up”)**, và dữ liệu tạm thời trong memory/đĩa có thể bị reset.  
+   - Vì vậy, **không nên tin tưởng việc dữ liệu tự động được lưu lâu dài**.
+
+3. **Hướng sử dụng an toàn**  
+   - Luôn **export CSV sau khi học xong**, để lưu lại tiến độ học và `next_review`.  
+   - Tránh import CSV nhiều người cùng lúc để hạn chế bị trộn dữ liệu.  
+   - Chuẩn bị sẵn CSV cá nhân để upload lại khi app vừa wake up.  
+
+4. **Hướng phát triển lâu dài**  
+   - Tích hợp lưu trữ cá nhân như **Google Sheets** hoặc cơ sở dữ liệu cloud để dữ liệu học tập được đồng bộ hóa riêng cho mỗi người.  
+   - Tăng trải nghiệm multi-user và đảm bảo dữ liệu an toàn, không bị trộn.
+
+> 💡 Tóm lại: trên phiên bản free, hãy xem app như **công cụ học thử trực tuyến**.  
+> Để lưu tiến độ cá nhân, luôn export CSV và chuẩn bị dữ liệu riêng khi import.
+
+---
+
+> 💡 Tóm lại: bạn có thể học trực tuyến ngay, nhưng **dữ liệu học tập quan trọng nên được export thường xuyên** để đảm bảo không mất tiến độ.
+
+---
+
+## 🚀 Hướng phát triển
+
+Hiện tại, phiên bản VocatGo deploy trên Streamlit Cloud miễn phí **không lưu dữ liệu lâu dài**, nên người dùng cần tự export CSV để lưu tiến độ học tập.  
+
+Các hướng phát triển trong tương lai:
+
+1. **Tích hợp lưu trữ đám mây**  
+   - Sử dụng **Google Sheets** hoặc các nền tảng lưu trữ trực tuyến khác để **lưu dữ liệu học tập tự động**, bao gồm `words.csv`, `quiz_log.csv` và `quiz_wrong_words.csv`.  
+   - Người dùng có thể mở app từ bất cứ thiết bị nào và dữ liệu sẽ được đồng bộ hóa.
+
+2. **Nâng cấp nền tảng deploy**  
+   - Tìm các nền tảng khác ngoài Streamlit Cloud free để **hỗ trợ nhiều người dùng cùng lúc** và **lưu trữ dữ liệu vĩnh viễn**.  
+   - Có thể kết hợp với dịch vụ hosting trả phí để tránh giới hạn tài nguyên, giảm thời gian khởi động khi app bị idle.
+
+
