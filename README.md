@@ -166,7 +166,6 @@ Các hướng phát triển trong tương lai:
 
 2. **Nâng cấp nền tảng deploy**  
    - Tìm các nền tảng khác ngoài Streamlit Cloud free để **hỗ trợ nhiều người dùng cùng lúc** và **lưu trữ dữ liệu vĩnh viễn**.  
-   - Có thể kết hợp với dịch vụ hosting trả phí để tránh giới hạn tài nguyên, giảm thời gian khởi động khi app bị idle.
 
 ---
 
