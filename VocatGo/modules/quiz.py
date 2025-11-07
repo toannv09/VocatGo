@@ -1,6 +1,5 @@
 """
 quiz.py - Tạo và xử lý bài kiểm tra (Quiz)
-Updated: Hidden hints for typing questions
 """
 import streamlit as st
 import random
