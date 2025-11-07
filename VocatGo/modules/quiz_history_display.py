@@ -1,6 +1,5 @@
 """
 quiz_history_display.py - Hiển thị lịch sử làm quiz
-Version: Fixed navigation to flashcard
 """
 import streamlit as st
 import pandas as pd
