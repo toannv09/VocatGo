@@ -1,6 +1,5 @@
 """
 word_manager.py - Quản lý từ vựng: thêm, sửa, xóa, load/save CSV
-Fixed: Tự động tạo thư mục data/vocab nếu chưa tồn tại
 """
 import pandas as pd
 import os
