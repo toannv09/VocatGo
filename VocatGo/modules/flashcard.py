@@ -1,6 +1,5 @@
 """
 flashcard.py - Logic hiển thị và xử lý flashcard
-Version: Fixed - Giữ filter_words trong session state
 """
 import streamlit as st
 from modules.word_manager import load_words
