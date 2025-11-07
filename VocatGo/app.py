@@ -1,7 +1,6 @@
 """
 app.py - Ứng dụng học từ vựng cá nhân với Streamlit
 Chạy: streamlit run app.py
-Fixed: Navigation khi ôn flashcard từ lịch sử quiz
 """
 import streamlit as st
 from modules.word_manager import (
