@@ -7,6 +7,13 @@ VocatGo giúp bạn học từ vựng theo phương pháp **Spaced Repetition (S
 
 ---
 
+## 🌐 Demo trực tuyến
+
+Bạn có thể thử nghiệm VocatGo trực tiếp tại:  
+[https://vocatgo.streamlit.app/](https://vocatgo.streamlit.app/)
+
+---
+
 ## 🎯 Mục đích
 - Ghi nhớ từ vựng lâu dài bằng **SRS**.
 - Ôn tập từ vựng và kiểm tra kiến thức qua **Quiz**.
@@ -102,13 +109,6 @@ agreement,n,/əˈɡriː.mənt/,"sự thỏa thuận, hợp đồng","They reache
 > 💡 Lưu ý:
 > - Khi mở CSV trên VSCode hoặc Excel, kiểm tra `meaning` và `example` đã được đặt trong `" "` nếu chứa dấu phẩy.  
 > - GitHub và Excel hiển thị CSV tương tự nhau, nhưng dấu ngoặc kép giúp tránh **thêm cột ngoài ý muốn**, tránh code chạy sai.
-
----
-
-## 🌐 Demo trực tuyến
-
-Bạn có thể thử nghiệm VocatGo trực tiếp tại:  
-[https://vocatgo.streamlit.app/](https://vocatgo.streamlit.app/)
 
 ---
 
